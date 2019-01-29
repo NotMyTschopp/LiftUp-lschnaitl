@@ -5,14 +5,19 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     [SerializeField] private float speed = 2;
+    [SerializeField] private Camera mainCam;
+    private Vector3 viewPort;
 
     Rigidbody2D rb;
-
-	// Use this for initialization
-	void Start ()
+    
+    // Use this for initialization
+    void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
-	}
+
+        mainCam = Camera.main;
+        viewPort = mainCam.ViewportToWorldPoint(new Vector3(mainCam.rect.width, mainCam.rect.height, 0));
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -34,6 +39,13 @@ public class Player : MonoBehaviour {
         else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+
+        // check if the player touches the screen borders
+        if(transform.position.y > viewPort.y)
+        {
+
         }
 
     }
