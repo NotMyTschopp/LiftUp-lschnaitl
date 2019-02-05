@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     [SerializeField] private float speed = 2;
-    [SerializeField] private Camera mainCam;
+    [SerializeField] private Camera cam;
     private Vector3 viewPort;
 
     Rigidbody2D rb;
@@ -15,8 +15,8 @@ public class Player : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody2D>();
 
-        mainCam = Camera.main;
-        viewPort = mainCam.ViewportToWorldPoint(new Vector3(mainCam.rect.width, mainCam.rect.height, 0));
+        cam = Camera.main;
+        viewPort = cam.ViewportToWorldPoint(new Vector3(cam.rect.width, cam.rect.height, 0));
     }
 	
 	// Update is called once per frame

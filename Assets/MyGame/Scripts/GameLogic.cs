@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private Behaviour[] scriptsForPlayMode;
+
+	public void StartGame()
+    {
+        foreach (Behaviour singleScript in scriptsForPlayMode)
+        {
+            singleScript.enabled = true;
+        }
+    }
+
+    public void EndGame()
+    {
+        foreach (Behaviour singleScript in scriptsForPlayMode)
+        {
+            singleScript.enabled = false;
+        }
+    }
 }

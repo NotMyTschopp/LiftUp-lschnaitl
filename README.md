@@ -1,4 +1,4 @@
-# LiftUp-lschnaitl
+# LiftUp
 Simple Unity game. Try to get as high as can.
 
  + Dev-Platform: Win 10, Unity 2018.2.14f1, Visual Studio Community 15.9.3
