@@ -43,10 +43,19 @@ public class Player : MonoBehaviour {
 
 
         // check if the player touches the screen borders
-        if(transform.position.y > viewPort.y)
+        if (transform.position.y > viewPort.y || 
+            transform.position.y < -viewPort.y || 
+            transform.position.x > viewPort.x || 
+            transform.position.x < -viewPort.x)
         {
-
+            Death();
         }
 
+    }
+
+
+    void Death ()
+    {
+        Debug.Log("Death");
     }
 }
