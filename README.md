@@ -1,5 +1,5 @@
 # LiftUp
-Simple Unity game. Try to get as high as can.
+Simple Unity game. Try to get as high as you can.
 
  + Dev-Platform: Win 10, Unity 2018.2.14f1, Visual Studio Community 15.9.3
  + Target-Platfrom: Standalone PC
@@ -16,9 +16,9 @@ If the Player touches the spikes of any platform, which are located on the lower
 If a platform crashed into another one from below the lower one crashing breaks. 
 When the Player is in the air you gain experience (score). 
 A Timer shows you how long you have survived. When you eventually die, 
-you’ll be greeted with the Game Over Screen and be shown your current score, 
+youâ€™ll be greeted with the Game Over Screen and be shown your current score, 
 going back to the main menu will not only give you the ability to play again but also show you your high score. 
-– This means the Player needs to fall from platform to platform without getting smashed by them nor touch the screen borders i.e. go to high or fall down or go to far out to the sides.
+â€“ This means the Player needs to fall from platform to platform without getting smashed by them nor touch the screen borders i.e. go to high or fall down or go to far out to the sides.
 
 The Player dies when:
  - touching the spikes of any platform
