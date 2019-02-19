@@ -28,7 +28,15 @@ public class MovingPlatform : MonoBehaviour {
 
         if(transform.position.y > viewPort.y)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Platform"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
