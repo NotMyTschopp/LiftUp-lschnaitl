@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour {
+public class MovingPlatform : MonoBehaviour
+{
 
     [SerializeField] private float minSpeed;
     [SerializeField] private float maxSpeed;
@@ -26,17 +27,9 @@ public class MovingPlatform : MonoBehaviour {
     {
         transform.Translate(new Vector3(0, 1 * speed, 0));
 
-        if(transform.position.y > viewPort.y)
+        if (transform.position.y > viewPort.y)
         {
             Destroy(gameObject);
         }
 	}
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Platform"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }

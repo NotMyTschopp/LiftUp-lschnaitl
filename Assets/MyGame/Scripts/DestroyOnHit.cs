@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOnHit : MonoBehaviour {
+public class DestroyOnHit : MonoBehaviour
+{
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Platform"))
+        if (collision.CompareTag(GlobalVariables.PLATFORMTAG))
         {
             Destroy(collision.gameObject);
         }

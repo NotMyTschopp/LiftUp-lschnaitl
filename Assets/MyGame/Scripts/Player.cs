@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     [SerializeField] private float speed = 2;
     [SerializeField] private Camera cam;
-    private Vector3 viewPort;
+    [SerializeField] private float bottomBorderOffset = 3;
+    [SerializeField] private float sideBorderOffset = 0;
 
-    Rigidbody2D rb;
+    private Vector3 viewPort;
+    private Rigidbody2D rb;
+    private bool isOnPlatform = false;
     
     // Use this for initialization
     void Start ()
@@ -23,11 +27,11 @@ public class Player : MonoBehaviour {
 	void Update ()
     {
 		//move the player left and right
-        if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
         }
-        else if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
+        else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
@@ -43,12 +47,18 @@ public class Player : MonoBehaviour {
 
 
         // check if the player touches the screen borders
-        if (transform.position.y > viewPort.y || 
-            transform.position.y < -viewPort.y || 
-            transform.position.x > viewPort.x || 
-            transform.position.x < -viewPort.x)
+        if (transform.position.y > viewPort.y + .5 /* adding a buffer so the player doesnt get killed immediately (can be higher than .5) */ || 
+            transform.position.y < -viewPort.y - bottomBorderOffset || 
+            transform.position.x > viewPort.x + sideBorderOffset || 
+            transform.position.x < -viewPort.x - sideBorderOffset)
         {
             Death();
+        }
+
+        //Gain Exp if the player is not touching a platform
+        if (!isOnPlatform)
+        {
+
         }
 
     }

@@ -1,16 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GlobalVariables : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+﻿public static class GlobalVariables
+{
+    public const string PLATFORMTAG = "Platform";
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
