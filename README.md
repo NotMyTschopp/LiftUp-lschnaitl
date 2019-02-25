@@ -32,4 +32,4 @@ The Player dies when:
 
 
 # Screens sketch
-<img href="Documents/gamescreens-liftup.jpeg" width="500"/>
+![Concept](Documents/gamescreens-liftup.jpeg)
