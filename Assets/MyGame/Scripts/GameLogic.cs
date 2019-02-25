@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameLogic : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameLogic : MonoBehaviour
 
     [SerializeField] private Behaviour[] scriptsForPlayMode;
     [SerializeField] private GameObject[] gameObjectsForPlayMode;
+    [SerializeField] private TextMeshProUGUI expNumberText;
 
     public float currentExp = 0;
     public float highestExp;
@@ -35,6 +37,8 @@ public class GameLogic : MonoBehaviour
         {
             Object.SetActive(true);
         }
+
+        expNumberText.gameObject.SetActive(true);
     }
 
     public void EndGame()
@@ -53,10 +57,14 @@ public class GameLogic : MonoBehaviour
         {
             PlayerPrefs.SetFloat("highscore", currentExp);
         }
+
+        expNumberText.gameObject.SetActive(false);
     }
 
     public void GainExp ()
     {
+        Debug.Log("EXP gained");
         currentExp += expGainPerFrame;
+        expNumberText.text = currentExp.ToString();
     }
 }

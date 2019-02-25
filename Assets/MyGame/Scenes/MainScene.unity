@@ -346,6 +346,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   cam: {fileID: 1994728040}
+  bottomBorderOffset: 3
+  sideBorderOffset: 0
+  gameLogic: {fileID: 1062661061}
 --- !u!50 &351843474
 Rigidbody2D:
   serializedVersion: 4
@@ -651,7 +654,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+    m_NormalColor: {r: 0.504717, g: 0.5091402, b: 1, a: 1}
     m_HighlightedColor: {r: 0.497, g: 0.497, b: 0.497, a: 1}
     m_PressedColor: {r: 0.85300004, g: 0.85300004, b: 0.85300004, a: 1}
     m_DisabledColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0.09019608}
@@ -1115,10 +1118,13 @@ MonoBehaviour:
   scriptsForPlayMode:
   - {fileID: 351843473}
   gameObjectsForPlayMode:
-  - {fileID: 85958538}
   - {fileID: 966429155}
-  - {fileID: 1799517729}
   - {fileID: 2103680062}
+  - {fileID: 1799517729}
+  expNumberText: {fileID: 85958540}
+  currentExp: 0
+  highestExp: 0
+  expGainPerFrame: 1
 --- !u!4 &1062661062
 Transform:
   m_ObjectHideFlags: 0
@@ -1497,7 +1503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1846898050
 Transform:
   m_ObjectHideFlags: 0
