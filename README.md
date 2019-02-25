@@ -33,3 +33,9 @@ The Player dies when:
 
 # Screens sketch
 ![Concept](Documents/gamescreens-liftup.jpeg)
+
+# Resources used
++ [Singleton.cs/UnityWiki](http://wiki.unity3d.com/index.php/Singleton)
+
+
+**Copyright by Leonhard Schnaitl**
