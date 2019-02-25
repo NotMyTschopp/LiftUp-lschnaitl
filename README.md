@@ -1,14 +1,19 @@
 # LiftUp
 Simple Unity game.
 
- + Dev-Platform: Win 10, Unity 2018.2.14f1, Visual Studio Community 15.9.3
- + Target-Platfrom: Standalone PC
+# Dev-Platform: 
+ Win 10, Unity 2018.2.14f1, Visual Studio Community 15.9.3
+ 
+# Target-Platfrom: 
+ Standalone PC
 
- + Status: implementation
+# Status: 
+ implementation
 
- + Controls: On X-Axis, with AD or Left and Right.
+# Controls: 
+ On X-Axis, with AD or Left and Right.
 
- + Concept:
+# Concept:
 The Player can move left and right with the AD and horizontal arrow keys. 
 If the Player touches any of the four screens borders, he dies and its game over. 
 Ice platforms spawn randomly underneath the screen and move up in random speeds. 
@@ -26,5 +31,5 @@ The Player dies when:
  - hitting the top of the cameras view
 
 
-<h4>Screens sketch</h4>
-<img src="Documents/gamescreens-liftup.jpeg" width="250">
+# Screens sketch
+<img href="Documents/gamescreens-liftup.jpeg" width="500"/>
