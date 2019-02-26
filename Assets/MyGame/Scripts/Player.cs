@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     [SerializeField] private float speed = 2;
     [SerializeField] private Camera cam;
     [SerializeField] private float bottomBorderOffset = 3;
@@ -14,9 +10,11 @@ public class Player : MonoBehaviour
 
     private Vector3 viewPort;
     private Rigidbody2D rb;
-    
+    private float topScreenBuffer = 0.5f;
+    private float fallingCapVelocity = -0.5f;
+
     // Use this for initialization
-    void Start ()
+    private void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
         
@@ -25,11 +23,8 @@ public class Player : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update ()
+	private void Update ()
     {
-
-        Debug.Log(rb.velocity);
-
         Movement();
         CheckForBorders();
         
@@ -42,7 +37,7 @@ public class Player : MonoBehaviour
     
     private void Death ()
     {
-        SceneManager.LoadScene(1);
+        gameLogic.EndGame();
     }
 
     private void Movement ()
@@ -70,7 +65,7 @@ public class Player : MonoBehaviour
     private void CheckForBorders ()
     {
         // check if the player touches the screen borders
-        if (transform.position.y > viewPort.y + .5 /* adding a buffer so the player doesnt get killed immediately (can be higher than .5) */ ||
+        if (transform.position.y > viewPort.y + topScreenBuffer || // adding a buffer so the player doesnt get killed immediately (can be higher than .5)
             transform.position.y < -viewPort.y - bottomBorderOffset ||
             transform.position.x > viewPort.x + sideBorderOffset ||
             transform.position.x < -viewPort.x - sideBorderOffset)
@@ -81,7 +76,7 @@ public class Player : MonoBehaviour
 
     private bool isOnPlatform ()
     {
-        if (rb.velocity.y < -0.5)
+        if (rb.velocity.y < fallingCapVelocity)
         {
             return false;
         }

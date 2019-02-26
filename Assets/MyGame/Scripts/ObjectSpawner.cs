@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
@@ -13,8 +11,6 @@ public class ObjectSpawner : MonoBehaviour
 
     private Vector3 viewPort;
     private float timerTime;
-    
-
     private bool started;
 
     private void Start()
@@ -33,14 +29,9 @@ public class ObjectSpawner : MonoBehaviour
             else if(timerTime <= 0)
             {
                 timerTime = timeForSpawn;
-                TimerZero();
+                SpawnSinglePlatform();
             }
         }
-    }
-
-    private void TimerZero()
-    {
-        SpawnSinglePlatform();
     }
 
     private void SpawnSinglePlatform()

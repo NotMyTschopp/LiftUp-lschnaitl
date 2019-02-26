@@ -1,29 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
-
-
-
-    // USE CONCRETE SINGELTON FOR SAVING THE CURRENT SCROE
-
-
-
-
     [SerializeField] private Behaviour[] scriptsForPlayMode;
     [SerializeField] private GameObject[] gameObjectsForPlayMode;
     [SerializeField] private TextMeshProUGUI expNumberText;
+    [SerializeField] private TextMeshProUGUI highscoreNumberText;
 
-    public float currentExp = 0;
-    public float highestExp;
-    public float expGainPerFrame = 0.05f;
+    private Timer timer;
+    private const string HIGHSCOREKEY = "highscore";
+
+    public int currentExp = 0;
+    public int highestExp;
+    public int expGainPerFrame = 1;
 
     private void Start()
     {
-        highestExp = PlayerPrefs.GetFloat("highscore", 0);
+        timer = GetComponent<Timer>();
+        highestExp = PlayerPrefs.GetInt(HIGHSCOREKEY, 0);
+        highscoreNumberText.text = highestExp.ToString();
     }
 
     public void StartGame()
@@ -53,18 +50,26 @@ public class GameLogic : MonoBehaviour
             Object.SetActive(false);
         }
 
-        if (currentExp > highestExp)
-        {
-            PlayerPrefs.SetFloat("highscore", currentExp);
-        }
+        timer.Stop();
+        Save();
 
         expNumberText.gameObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void GainExp ()
     {
-        Debug.Log("EXP gained");
         currentExp += expGainPerFrame;
         expNumberText.text = currentExp.ToString();
+    }
+
+    private void Save()
+    {
+        SaveFile.Instance.currentTime = timer.currentStoppedTime;
+        SaveFile.Instance.currentScore = currentExp;
+        if (currentExp > highestExp)
+        {
+            PlayerPrefs.SetInt(HIGHSCOREKEY, currentExp);
+        }
     }
 }
