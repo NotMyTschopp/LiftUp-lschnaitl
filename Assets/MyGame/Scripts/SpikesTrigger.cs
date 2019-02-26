@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class SpikesTrigger : MonoBehaviour
-{
+public class SpikesTrigger : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -10,5 +9,4 @@ public class SpikesTrigger : MonoBehaviour
             Destroy(col.gameObject);
         }
     }
-
 }

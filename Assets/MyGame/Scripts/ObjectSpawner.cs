@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour
-{
+public class ObjectSpawner : MonoBehaviour {
 
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject icePlatform;

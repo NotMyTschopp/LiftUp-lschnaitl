@@ -2,8 +2,8 @@
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameLogic : MonoBehaviour
-{
+public class GameLogic : MonoBehaviour {
+
     [SerializeField] private Behaviour[] scriptsForPlayMode;
     [SerializeField] private GameObject[] gameObjectsForPlayMode;
     [SerializeField] private TextMeshProUGUI expNumberText;
