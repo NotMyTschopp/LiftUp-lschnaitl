@@ -2,12 +2,12 @@
 Simple Unity game.
 
 # Dev-Platform: 
- Windows 10 64-bit, Unity 2018.2.14f1, Visual Studio Community 15.9.3
- Scripting Runtime Verion .NET 3.5 Equivalent
+ Windows 10 64-bit, Unity 2018.2.14f1, Visual Studio Community 15.9.3 <br/>
+ Scripting Runtime Verion .NET 3.5 Equivalent <br/>
  Api Compatibility Level .NET 2.0 Subset
  
 # Target-Platfrom: 
- Standalone PC
+ Standalone PC <br/>
  Resolution 1920x1080
 
 # Status: 
