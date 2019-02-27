@@ -2,13 +2,16 @@
 Simple Unity game.
 
 # Dev-Platform: 
- Win 10, Unity 2018.2.14f1, Visual Studio Community 15.9.3
+ Windows 10 64-bit, Unity 2018.2.14f1, Visual Studio Community 15.9.3
+ Scripting Runtime Verion .NET 3.5 Equivalent
+ Api Compatibility Level .NET 2.0 Subset
  
 # Target-Platfrom: 
  Standalone PC
+ Resolution 1920x1080
 
 # Status: 
- implementation
+ Implementation finished
 
 # Controls: 
  On X-Axis, with AD or Left and Right.
@@ -32,10 +35,14 @@ The Player dies when:
 
 
 # Screens sketch
-![Concept](Documents/gamescreens-liftup.jpeg)
+![Concept](Documents/concept-liftup1.jpg)
+
+# Lessons Learned and Limitatons
+none
+
 
 # Resources used
-+ [Singleton.cs/UnityWiki](http://wiki.unity3d.com/index.php/Singleton)
+none
 
 
 **Copyright by Leonhard Schnaitl**
