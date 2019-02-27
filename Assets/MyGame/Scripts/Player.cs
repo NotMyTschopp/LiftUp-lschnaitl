@@ -29,13 +29,13 @@ public class Player : MonoBehaviour
         CheckForBorders();
         
         //Gain Exp if the player is not touching a platform
-        if (!isOnPlatform())
+        if (!IsOnPlatform())
         {
             gameLogic.GainExp();
         }
     }
     
-    private void Death ()
+    public void Death ()
     {
         gameLogic.EndGame();
     }
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private bool isOnPlatform ()
+    private bool IsOnPlatform ()
     {
         if (rb.velocity.y < fallingCapVelocity)
         {

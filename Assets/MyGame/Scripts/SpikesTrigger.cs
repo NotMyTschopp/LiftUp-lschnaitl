@@ -8,5 +8,9 @@ public class SpikesTrigger : MonoBehaviour{
         {
             Destroy(col.gameObject);
         }
+        else if (col.CompareTag(GlobalVariables.PLAYERTAG))
+        {
+            col.GetComponent<Player>().Death();
+        }
     }
 }

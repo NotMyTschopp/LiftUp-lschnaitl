@@ -9,5 +9,4 @@ public class DestroyOnHit : MonoBehaviour {
             Destroy(collision.gameObject);
         }
     }
-
 }
