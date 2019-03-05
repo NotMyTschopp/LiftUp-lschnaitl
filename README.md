@@ -37,6 +37,17 @@ The Player dies when:
 # Screens sketch
 ![Concept](Documents/concept-liftup1.jpg)
 
+# Gameplay Screenshots
+
+**Menu:** <br/>
+![GameplayScreenshot1](Documents/GameplayScreenshot1.JPG)
+
+**InGame:** <br/>
+![GameplayScreenshot2](Documents/GameplayScreenshot2.JPG)
+
+**GameOver:** <br/>
+![GameplayScreenshot3](Documents/GameplayScreenshot3.JPG)
+
 # Lessons Learned and Limitatons
 none
 
