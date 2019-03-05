@@ -16,14 +16,14 @@ public class GameLogic : MonoBehaviour {
     public int highestExp;
     public int expGainPerFrame = 1;
 
-    private void Start()
+    private void Start ()
     {
         timer = GetComponent<Timer>();
         highestExp = PlayerPrefs.GetInt(HIGHSCOREKEY, 0);
         highscoreNumberText.text = highestExp.ToString();
     }
 
-    public void StartGame()
+    public void StartGame ()
     {
         foreach (Behaviour singleScript in scriptsForPlayMode)
         {
@@ -38,7 +38,7 @@ public class GameLogic : MonoBehaviour {
         expNumberText.gameObject.SetActive(true);
     }
 
-    public void EndGame()
+    public void EndGame ()
     {
         foreach (Behaviour singleScript in scriptsForPlayMode)
         {
@@ -63,7 +63,7 @@ public class GameLogic : MonoBehaviour {
         expNumberText.text = currentExp.ToString();
     }
 
-    private void Save()
+    private void Save ()
     {
         SaveFile.Instance.currentTime = timer.currentStoppedTime;
         SaveFile.Instance.currentScore = currentExp;

@@ -12,12 +12,12 @@ public class ObjectSpawner : MonoBehaviour {
     private float timerTime;
     private bool started;
 
-    private void Start()
+    private void Start ()
     {
         viewPort = cam.ViewportToWorldPoint(new Vector3(cam.rect.width, cam.rect.height, 0));
     }
 
-    private void Update()
+    private void Update ()
     {
         if (started)
         {
@@ -33,13 +33,13 @@ public class ObjectSpawner : MonoBehaviour {
         }
     }
 
-    private void SpawnSinglePlatform()
+    private void SpawnSinglePlatform ()
     {
         float randX = Random.Range(-viewPort.x + padding, viewPort.x - padding);
         Instantiate(icePlatform, new Vector3(randX, -viewPort.y - offset, 0), Quaternion.identity);
     }
 
-    public void StartSpawning()
+    public void StartSpawning ()
     {
         started = true;
     }
