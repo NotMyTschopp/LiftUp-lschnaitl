@@ -1,5 +1,5 @@
 # LiftUp
-Simple Unity game.
+Try to fall as much as you can but not to far. Dont touch anything like spikes or screen borders!
 
 # Dev-Platform: 
  Windows 10 64-bit, Unity 2018.2.14f1, Visual Studio Community 15.9.3 <br/>
@@ -17,6 +17,7 @@ Simple Unity game.
  On X-Axis, with AD or Left and Right.
 
 # Concept:
+(2D Game)
 The Player can move left and right with the AD and horizontal arrow keys. 
 If the Player touches any of the four screens borders, he dies and its game over. 
 Ice platforms spawn randomly underneath the screen and move up in random speeds. 
