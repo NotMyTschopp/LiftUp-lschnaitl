@@ -11,7 +11,7 @@ Simple Unity game.
  Resolution 1920x1080
 
 # Status: 
- Implementation finished
+ Implementation finished 100%
 
 # Controls: 
  On X-Axis, with AD or Left and Right.
