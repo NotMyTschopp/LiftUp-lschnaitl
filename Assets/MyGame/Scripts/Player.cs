@@ -9,14 +9,14 @@ public class Player : MonoBehaviour
     [SerializeField] private GameLogic gameLogic;
 
     private Vector3 viewPort;
-    private Rigidbody2D rb;
+    private Rigidbody2D playerRigidbody;
     private float topScreenBuffer = 0.5f;
     private float fallingCapVelocity = -0.5f;
 
     // Use this for initialization
     private void Start ()
     {
-        rb = GetComponent<Rigidbody2D>();
+        playerRigidbody = GetComponent<Rigidbody2D>();
         
         cam = Camera.main;
         viewPort = cam.ViewportToWorldPoint(new Vector3(cam.rect.width, cam.rect.height, 0));
@@ -45,20 +45,20 @@ public class Player : MonoBehaviour
         //move the player left and right
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
+            playerRigidbody.velocity = new Vector2(-1 * speed, playerRigidbody.velocity.y);
         }
         else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            playerRigidbody.velocity = new Vector2(0, playerRigidbody.velocity.y);
         }
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(1 * speed, rb.velocity.y);
+            playerRigidbody.velocity = new Vector2(1 * speed, playerRigidbody.velocity.y);
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            playerRigidbody.velocity = new Vector2(0, playerRigidbody.velocity.y);
         }
     }
 
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
 
     private bool IsOnPlatform ()
     {
-        if (rb.velocity.y < fallingCapVelocity)
+        if (playerRigidbody.velocity.y < fallingCapVelocity)
         {
             return false;
         }
