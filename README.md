@@ -50,7 +50,9 @@ The Player dies when:
 ![GameplayScreenshot3](Documents/GameplayScreenshot3.JPG)
 
 # Lessons Learned and Limitatons
-none
+When using the Update method to move objects it binds the speed of your object to your framerate which is not optimal.<br/>
+Use a fixed frame interval instead. <br/>
+So if you happen to play the game on a more powerful machine, don't be suprised by the incredible speeds.
 
 
 # Resources used
