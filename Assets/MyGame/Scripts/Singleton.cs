@@ -27,13 +27,11 @@ public class GenericSingletonClass<T> : MonoBehaviour where T : Component
     {
         if (instance == null)
         {
-            Debug.Log("Assign this " + Tag + " instance  with name " + gameObject.name);
             instance = this as T;
             DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            Debug.Log("Destroy " + Tag + " " + this.gameObject.name);
             Destroy(this.gameObject);
         }
     }

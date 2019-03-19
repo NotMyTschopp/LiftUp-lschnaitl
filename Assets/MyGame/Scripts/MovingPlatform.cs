@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour {
-
+public class MovingPlatform : MonoBehaviour
+{
     [SerializeField] private float minSpeed;
     [SerializeField] private float maxSpeed;
 

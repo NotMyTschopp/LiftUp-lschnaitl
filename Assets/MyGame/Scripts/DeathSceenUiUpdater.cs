@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class DeathSceenUiUpdater : MonoBehaviour {
-
+public class DeathSceenUiUpdater : MonoBehaviour
+{
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timeText;
 
