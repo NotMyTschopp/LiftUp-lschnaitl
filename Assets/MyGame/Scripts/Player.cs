@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	private void Update ()
+	private void FixedUpdate ()
     {
         Movement();
         CheckForBorders();
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         //move the player left and right
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            playerRigidbody.velocity = new Vector2(-1 * speed, playerRigidbody.velocity.y);
+            playerRigidbody.velocity = new Vector2(-speed, playerRigidbody.velocity.y);
         }
         else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
         {
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            playerRigidbody.velocity = new Vector2(1 * speed, playerRigidbody.velocity.y);
+            playerRigidbody.velocity = new Vector2(speed, playerRigidbody.velocity.y);
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {

@@ -19,9 +19,9 @@ public class MovingPlatform : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	private void Update ()
+	private void FixedUpdate ()
     {
-        transform.Translate(new Vector3(0, 1 * speed, 0));
+        transform.Translate(new Vector3(0, speed, 0));
 
         if (transform.position.y > viewPort.y)
         {
