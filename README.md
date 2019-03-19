@@ -54,7 +54,7 @@ When using the Update method to move objects it binds the speed of your object t
 Use a fixed frame interval instead. <br/>
 So if you happen to play the game on a more powerful machine, don't be suprised by the incredible speeds.
 
-If you fork or download the project be aware of a certain bug. The DeathScene is added to the BuildSettings but Unity does not recognise it. If you remove and add it again Unity will accept it.
+If you fork or download the project be aware of a certain bug. The DeathScene is added to the BuildSettings but Unity does not recognize it. If you remove and add it again Unity will accept it.
 
 
 # Resources used
